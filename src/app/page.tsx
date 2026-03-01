@@ -38,7 +38,7 @@ export default function Home() {
       <Toaster position="top-center" expand={true} richColors theme="dark" />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[100dvh] min-h-[600px] flex items-center justify-center pt-20 overflow-hidden">
+      <section className="relative w-full h-[100dvh] min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
         {/* Abstract Background for Premium Fantasy Feel */}
         <div className="absolute inset-0 z-0 bg-slate-950">
           <div className="absolute inset-0 bg-gradient-radial from-accent-gold/10 via-slate-900 to-slate-950 opacity-60"></div>
@@ -49,6 +49,9 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
+          {/* Subtle radial gradient behind text for depth */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(245,158,11,0.08)_0%,transparent_60%)] rounded-full pointer-events-none z-[-1]"></div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -62,7 +65,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 drop-shadow-sm"
+            className="text-5xl md:text-7xl lg:text-8xl font-logo font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 drop-shadow-sm"
           >
             Project G
           </motion.h1>
@@ -91,19 +94,20 @@ export default function Home() {
             </div>
           </motion.button>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            onClick={() => {
-              document.getElementById("news")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-accent-gold transition-colors animate-bounce cursor-pointer z-20"
-          >
-            <span className="text-sm font-medium uppercase tracking-widest">Вниз</span>
-            <ChevronRight className="rotate-90" size={20} />
-          </motion.button>
         </div>
+
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          onClick={() => {
+            document.getElementById("news")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-accent-gold transition-colors animate-bounce cursor-pointer z-20"
+        >
+          <span className="text-sm font-medium uppercase tracking-widest">Вниз</span>
+          <ChevronRight className="rotate-90" size={20} />
+        </motion.button>
       </section>
 
       {/* News Section */}
@@ -247,7 +251,7 @@ export default function Home() {
                       </div>
                       <button
                         onClick={() => setSelectedItem(item)}
-                        className="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-bold hover:bg-white hover:text-slate-950 transition-colors shadow-lg shadow-black/20"
+                        className="px-5 py-2.5 rounded-xl bg-slate-800 border border-white/10 text-white font-bold hover:border-accent-gold/50 hover:shadow-[0_0_15px_rgba(245,158,11,0.5)] transition-all shadow-lg shadow-black/20"
                       >
                         Купить
                       </button>
