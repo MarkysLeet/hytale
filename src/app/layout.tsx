@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Philosopher } from "next/font/google";
+import { Inter, Philosopher, Cinzel } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" });
 const philosopher = Philosopher({
   weight: ["400", "700"],
   subsets: ["latin", "cyrillic"],
   variable: "--font-philosopher"
+});
+const cinzel = Cinzel({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-cinzel"
 });
 
 export const metadata: Metadata = {
@@ -22,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark">
       <body
-        className={`${inter.variable} ${philosopher.variable} font-sans bg-background text-foreground antialiased selection:bg-accent-gold/30 selection:text-accent-gold`}
+        className={`${inter.variable} ${philosopher.variable} ${cinzel.variable} font-sans bg-background text-foreground antialiased selection:bg-accent-gold/30 selection:text-accent-gold`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
