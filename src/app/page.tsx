@@ -91,15 +91,18 @@ export default function Home() {
             </div>
           </motion.button>
 
-          <motion.div
+          <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 animate-bounce"
+            onClick={() => {
+              document.getElementById("news")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-accent-gold transition-colors animate-bounce cursor-pointer z-20"
           >
             <span className="text-sm font-medium uppercase tracking-widest">Вниз</span>
             <ChevronRight className="rotate-90" size={20} />
-          </motion.div>
+          </motion.button>
         </div>
       </section>
 
