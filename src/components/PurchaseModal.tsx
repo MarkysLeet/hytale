@@ -26,6 +26,10 @@ export function PurchaseModal({ isOpen, onClose, item }: PurchaseModalProps) {
     } else {
       document.body.style.overflow = '';
     }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   if (!isOpen || !item) return null;
