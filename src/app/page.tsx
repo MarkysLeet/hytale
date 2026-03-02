@@ -38,7 +38,7 @@ export default function Home() {
       <Toaster position="top-center" expand={true} richColors theme="dark" />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[100dvh] min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
+      <section className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center pt-20 overflow-hidden">
         {/* Abstract Background for Premium Fantasy Feel */}
         <div className="absolute inset-0 z-0 bg-slate-950">
           <div className="absolute inset-0 bg-gradient-radial from-accent-gold/10 via-slate-900 to-slate-950 opacity-60"></div>
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-hero"></div>
         </div>
 
-        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
+        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center -mt-16">
           {/* Subtle radial gradient behind text for depth */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(245,158,11,0.08)_0%,transparent_60%)] rounded-full pointer-events-none z-[-1]"></div>
 
@@ -103,7 +103,7 @@ export default function Home() {
           onClick={() => {
             document.getElementById("news")?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-accent-gold transition-colors animate-bounce cursor-pointer z-20"
+          className="absolute bottom-8 left-0 right-0 flex flex-col items-center justify-center gap-2 text-slate-500 hover:text-accent-gold transition-colors animate-bounce cursor-pointer z-20"
         >
           <span className="text-sm font-medium uppercase tracking-widest">Вниз</span>
           <ChevronRight className="rotate-90" size={20} />
